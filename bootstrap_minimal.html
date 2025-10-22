@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Minimal Bootstrap</title>
+</head>
+<body>
+<script>
+(function() {
+    'use strict';
+
+    // Signal to parent that we're ready for code injection
+    function signalReady() {
+        if (window.parent !== window) {
+            window.parent.postMessage({
+                type: 'BOOTSTRAP_READY',
+                origin: window.location.origin,
+                protocol: window.location.protocol,
+                timestamp: Date.now()
+            }, '*');
+            console.log('🚀 Bootstrap ready - origin:', window.location.origin);
+        }
+    }
+
+    // Listen for code injection from parent frame
+    window.addEventListener('message', function(event) {
+        const msg = event.data;
+
+        if (msg.type === 'INJECT_CODE') {
+            console.log('📥 Received code injection request');
+            try {
+                // Create script element and inject the code
+                const script = document.createElement('script');
+                script.textContent = msg.code;
+                document.head.appendChild(script);
+
+                console.log('✅ Code injected successfully');
+
+                // Notify parent of success
+                if (event.source) {
+                    event.source.postMessage({
+                        type: 'CODE_INJECTED',
+                        success: true,
+                        timestamp: Date.now()
+                    }, event.origin);
+                }
+            } catch (error) {
+                console.error('❌ Code injection failed:', error);
+
+                // Notify parent of failure
+                if (event.source) {
+                    event.source.postMessage({
+                        type: 'CODE_INJECTED',
+                        success: false,
+                        error: error.message,
+                        timestamp: Date.now()
+                    }, event.origin);
+                }
+            }
+        }
+    });
+
+    // Send ready signal when loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', signalReady);
+    } else {
+        signalReady();
+    }
+})();
+</script>
+</body>
+</html>
