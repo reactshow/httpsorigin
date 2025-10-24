@@ -1,0 +1,11 @@
+{
+  "key": "special_chars",
+  "value": {
+    "unicode": "你好世界 🌍",
+    "quotes": "She said \"hello\" and he said 'goodbye'",
+    "newlines": "line1\\nline2\\ntab\\there",
+    "special": "<>&\"'/\\[]{}()"
+  },
+  "timestamp": 1761289211839,
+  "updated": "2025-10-24T07:00:11.839Z"
+}
