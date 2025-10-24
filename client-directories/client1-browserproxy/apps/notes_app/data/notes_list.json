@@ -1,0 +1,32 @@
+{
+  "key": "notes_list",
+  "value": {
+    "notes": [
+      {
+        "id": "note_1761060039238",
+        "title": "llhljhihihihihi",
+        "content": "ffybknlmlml,",
+        "createdAt": "2025-10-21T15:20:39.238Z",
+        "updatedAt": "2025-10-21T15:20:39.238Z"
+      },
+      {
+        "id": "test_note_2_1761053671659",
+        "title": "Second Test Note",
+        "content": "Another test note.",
+        "createdAt": "2025-10-21T13:34:31.659Z",
+        "updatedAt": "2025-10-21T13:34:31.659Z"
+      },
+      {
+        "id": "test_note_1761053671129",
+        "title": "Test Note from Test Suite",
+        "content": "This is a test note created to verify notes_app functionality.",
+        "createdAt": "2025-10-21T13:34:31.129Z",
+        "updatedAt": "2025-10-21T13:34:31.129Z"
+      }
+    ],
+    "savedAt": "2025-10-24T06:59:11.426Z",
+    "totalNotes": 3
+  },
+  "timestamp": 1761289151434,
+  "updated": "2025-10-24T06:59:11.434Z"
+}

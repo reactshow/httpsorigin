@@ -1,0 +1,13 @@
+{
+  "bridge_active": true,
+  "last_poll": 1761289114753,
+  "poll_interval_ms": 2000,
+  "directory_permission": "granted",
+  "processing": false,
+  "current_command": null,
+  "commands_processed": 0,
+  "commands_succeeded": 0,
+  "commands_failed": 0,
+  "commands_timeout": 0,
+  "history_size": 19
+}

@@ -1,0 +1,6 @@
+{
+  "id": "check_tests_001",
+  "target": "default",
+  "script": "return { totalTests: window.TestSuite.tests.length, categories: window.TestSuite.tests.map(t => t.category).filter((v,i,a) => a.indexOf(v) === i), apiTestCount: window.TestSuite.tests.filter(t => t.category.includes('API Tester')).length };",
+  "timeout_ms": 3000
+}
